@@ -31,4 +31,4 @@ jobs:
           context: ./project/techtrends
           file: ./project/techtrends/Dockerfile
           push: true
-          tags: user/techtrends:latest
+          tags: mppcosta/techtrends:latest
