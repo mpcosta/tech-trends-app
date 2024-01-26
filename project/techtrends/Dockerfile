@@ -4,6 +4,7 @@ LABEL maintainer="Marco Costa"
 COPY . /app
 WORKDIR /app
 
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 RUN python init_db.py
 
