@@ -68,7 +68,7 @@ def metrics():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-        app.logger.warn('Non-existing Article has been accessed - returning 404 page')
+        app.logger.warning('Non-existing Article has been accessed - returning 404 page')
         return render_template('404.html'), 404
     else:
         app.logger.info(f'Article: {post["title"]} successfully retrieved!')
