@@ -8,29 +8,30 @@ docker run -d -p 7111:3111 --name techtrends techtrends
 docker logs techtrends
 
 ## Logs from the container running the TechTrends application
-(venv) PS C:\Users\marck\IdeaProjects\tech-trends-app\project\techtrends> docker logs techtrends
  * Serving Flask app 'app' (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
  * Debug mode: off
-2024-01-26T02:58:30Z WARNING  * Running on all addresses.
+2024-01-26T20:02:47Z WARNING  * Running on all addresses.
    WARNING: This is a development server. Do not use it in a production deployment.
-2024-01-26T02:58:30Z INFO  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
-2024-01-26T02:59:03Z INFO 172.17.0.1 - - [26/Jan/2024 02:59:03] "GET / HTTP/1.1" 200 -
-2024-01-26T02:59:03Z INFO 172.17.0.1 - - [26/Jan/2024 02:59:03] "GET /static/css/main.css HTTP/1.1" 200 -
-2024-01-26T02:59:03Z INFO 172.17.0.1 - - [26/Jan/2024 02:59:03] "GET /favicon.ico HTTP/1.1" 404 -
-2024-01-26T02:59:11Z INFO Article: 2020 CNCF Annual Report successfully retrieved!
-2024-01-26T02:59:11Z INFO 172.17.0.1 - - [26/Jan/2024 02:59:11] "GET /1 HTTP/1.1" 200 -
-2024-01-26T02:59:11Z INFO 172.17.0.1 - - [26/Jan/2024 02:59:11] "GET /static/css/main.css HTTP/1.1" 304 -
-2024-01-26T03:01:11Z INFO Requested /healthz endpoint successful
-2024-01-26T03:01:11Z INFO 172.17.0.1 - - [26/Jan/2024 03:01:11] "GET /healthz HTTP/1.1" 200 -
-2024-01-26T03:01:16Z INFO Requested /metrics endpoint successful
-2024-01-26T03:01:16Z INFO 172.17.0.1 - - [26/Jan/2024 03:01:16] "GET /metrics HTTP/1.1" 200 -
-2024-01-26T03:01:38Z INFO Requested /about endpoint successful
-2024-01-26T03:01:38Z INFO 172.17.0.1 - - [26/Jan/2024 03:01:38] "GET /about HTTP/1.1" 200 -
-2024-01-26T03:01:38Z INFO 172.17.0.1 - - [26/Jan/2024 03:01:38] "GET /static/css/main.css HTTP/1.1" 304 -
-2024-01-26T03:01:41Z INFO 172.17.0.1 - - [26/Jan/2024 03:01:41] "GET / HTTP/1.1" 200 -
-2024-01-26T03:01:41Z INFO 172.17.0.1 - - [26/Jan/2024 03:01:41] "GET /static/css/main.css HTTP/1.1" 304 -
-(venv) PS C:\Users\marck\IdeaProjects\tech-trends-app\project\techtrends>
-
+2024-01-26T20:02:47Z INFO  * Running on http://192.168.1.98:3111/ (Press CTRL+C to quit)
+2024-01-26T20:02:51Z INFO 192.168.1.98 - - [26/Jan/2024 20:02:51] "GET / HTTP/1.1" 200 -
+2024-01-26T20:02:51Z INFO 192.168.1.98 - - [26/Jan/2024 20:02:51] "GET /static/css/main.css HTTP/1.1" 304 -
+2024-01-26T20:02:52Z INFO Article: 2020 CNCF Annual Report successfully retrieved!
+2024-01-26T20:02:52Z INFO 192.168.1.98 - - [26/Jan/2024 20:02:52] "GET /1 HTTP/1.1" 200 -
+2024-01-26T20:02:52Z INFO 192.168.1.98 - - [26/Jan/2024 20:02:52] "GET /static/css/main.css HTTP/1.1" 304 -
+2024-01-26T20:02:55Z WARNING Non-existing Article has been accessed - returning 404 page
+2024-01-26T20:02:55Z INFO 192.168.1.98 - - [26/Jan/2024 20:02:55] "GET /10 HTTP/1.1" 404 -
+2024-01-26T20:02:55Z INFO 192.168.1.98 - - [26/Jan/2024 20:02:55] "GET /static/css/main.css HTTP/1.1" 304 -
+2024-01-26T20:03:05Z INFO Requested /about endpoint successful
+2024-01-26T20:03:05Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:05] "GET /about HTTP/1.1" 200 -
+2024-01-26T20:03:05Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:05] "GET /static/css/main.css HTTP/1.1" 304 -
+2024-01-26T20:03:13Z INFO Requested /metrics endpoint successful
+2024-01-26T20:03:13Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:13] "GET /create HTTP/1.1" 200 -
+2024-01-26T20:03:13Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:13] "GET /static/css/main.css HTTP/1.1" 304 -
+2024-01-26T20:03:20Z INFO Requested /metrics endpoint successful
+2024-01-26T20:03:20Z INFO News Article: Hello World created successfully
+2024-01-26T20:03:20Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:20] "POST /create HTTP/1.1" 302 -
+2024-01-26T20:03:20Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:20] "GET / HTTP/1.1" 200 -
+2024-01-26T20:03:20Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:20] "GET /static/css/main.css HTTP/1.1" 304 -
