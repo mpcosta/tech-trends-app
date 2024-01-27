@@ -1,10 +1,27 @@
 import logging
 import sqlite3
+import sys
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
 
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s', datefmt='%Y-%m-%dT%H:%M:%SZ')
+logger = logging.getLogger('techtrends')
+logger.setLevel(logging.DEBUG)
+formatter = logging.Formatter(fmt='%(asctime)s %(levelname)s %(message)s', datefmt='%Y-%m-%dT%H:%M:%SZ')
+
+# Handler for STDOUT
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setLevel(logging.DEBUG)
+stdout_handler.setFormatter(formatter)
+
+# Handler for STDERR
+stderr_handler = logging.StreamHandler(sys.stderr)
+stderr_handler.setLevel(logging.WARNING)
+stderr_handler.setFormatter(formatter)
+
+logger.addHandler(stdout_handler)
+logger.addHandler(stderr_handler)
+
 db_connection_count = 0
 
 # Function to get a database connection.
@@ -44,7 +61,7 @@ def status():
         status=200,
         mimetype='application/json'
     )
-    app.logger.info('Requested /healthz endpoint successful')
+    logger.info('Requested /healthz endpoint successful')
     return response
 
 # Define endpoint used for metrics related data
@@ -59,7 +76,7 @@ def metrics():
         status=200,
         mimetype='application/json'
     )
-    app.logger.info('Requested /metrics endpoint successful')
+    logger.info('Requested /metrics endpoint successful')
     return response
 
 # Define how each individual article is rendered
@@ -68,22 +85,22 @@ def metrics():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-        app.logger.warning('Non-existing Article has been accessed - returning 404 page')
+        logger.error('Non-existing Article has been accessed - returning 404 page')
         return render_template('404.html'), 404
     else:
-        app.logger.info(f'Article: {post["title"]} successfully retrieved!')
+        logger.info(f'Article: {post["title"]} successfully retrieved!')
         return render_template('post.html', post=post)
 
 # Define the About Us page
 @app.route('/about')
 def about():
-    app.logger.info('Requested /about endpoint successful')
+    logger.info('Requested /about endpoint successful')
     return render_template('about.html')
 
 # Define the post creation functionality
 @app.route('/create', methods=('GET', 'POST'))
 def create():
-    app.logger.info('Requested /metrics endpoint successful')
+    logger.info('Requested /metrics endpoint successful')
     if request.method == 'POST':
         title = request.form['title']
         content = request.form['content']
@@ -97,7 +114,7 @@ def create():
             connection.commit()
             connection.close()
 
-            app.logger.info(f'News Article: {title} created successfully')
+            logger.info(f'News Article: {title} created successfully')
             return redirect(url_for('index'))
 
     return render_template('create.html')

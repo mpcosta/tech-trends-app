@@ -13,25 +13,26 @@ docker logs techtrends
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
  * Debug mode: off
-2024-01-26T20:02:47Z WARNING  * Running on all addresses.
+ * Running on all addresses.
    WARNING: This is a development server. Do not use it in a production deployment.
-2024-01-26T20:02:47Z INFO  * Running on http://192.168.1.98:3111/ (Press CTRL+C to quit)
-2024-01-26T20:02:51Z INFO 192.168.1.98 - - [26/Jan/2024 20:02:51] "GET / HTTP/1.1" 200 -
-2024-01-26T20:02:51Z INFO 192.168.1.98 - - [26/Jan/2024 20:02:51] "GET /static/css/main.css HTTP/1.1" 304 -
-2024-01-26T20:02:52Z INFO Article: 2020 CNCF Annual Report successfully retrieved!
-2024-01-26T20:02:52Z INFO 192.168.1.98 - - [26/Jan/2024 20:02:52] "GET /1 HTTP/1.1" 200 -
-2024-01-26T20:02:52Z INFO 192.168.1.98 - - [26/Jan/2024 20:02:52] "GET /static/css/main.css HTTP/1.1" 304 -
-2024-01-26T20:02:55Z WARNING Non-existing Article has been accessed - returning 404 page
-2024-01-26T20:02:55Z INFO 192.168.1.98 - - [26/Jan/2024 20:02:55] "GET /10 HTTP/1.1" 404 -
-2024-01-26T20:02:55Z INFO 192.168.1.98 - - [26/Jan/2024 20:02:55] "GET /static/css/main.css HTTP/1.1" 304 -
-2024-01-26T20:03:05Z INFO Requested /about endpoint successful
-2024-01-26T20:03:05Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:05] "GET /about HTTP/1.1" 200 -
-2024-01-26T20:03:05Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:05] "GET /static/css/main.css HTTP/1.1" 304 -
-2024-01-26T20:03:13Z INFO Requested /metrics endpoint successful
-2024-01-26T20:03:13Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:13] "GET /create HTTP/1.1" 200 -
-2024-01-26T20:03:13Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:13] "GET /static/css/main.css HTTP/1.1" 304 -
-2024-01-26T20:03:20Z INFO Requested /metrics endpoint successful
-2024-01-26T20:03:20Z INFO News Article: Hello World created successfully
-2024-01-26T20:03:20Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:20] "POST /create HTTP/1.1" 302 -
-2024-01-26T20:03:20Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:20] "GET / HTTP/1.1" 200 -
-2024-01-26T20:03:20Z INFO 192.168.1.98 - - [26/Jan/2024 20:03:20] "GET /static/css/main.css HTTP/1.1" 304 -
+ * Running on http://192.168.1.98:3111/ (Press CTRL+C to quit)
+192.168.1.98 - - [27/Jan/2024 19:12:08] "GET / HTTP/1.1" 200 -
+192.168.1.98 - - [27/Jan/2024 19:12:08] "GET /static/css/main.css HTTP/1.1" 304 -
+2024-01-27T19:12:34Z INFO Article: 2020 CNCF Annual Report successfully retrieved!
+192.168.1.98 - - [27/Jan/2024 19:12:34] "GET /1 HTTP/1.1" 200 -
+192.168.1.98 - - [27/Jan/2024 19:12:34] "GET /static/css/main.css HTTP/1.1" 304 -
+2024-01-27T19:15:11Z ERROR Non-existing Article has been accessed - returning 404 page
+2024-01-27T19:15:11Z ERROR Non-existing Article has been accessed - returning 404 page
+192.168.1.98 - - [27/Jan/2024 19:15:11] "GET /10 HTTP/1.1" 404 -
+192.168.1.98 - - [27/Jan/2024 19:15:11] "GET /static/css/main.css HTTP/1.1" 304 -
+2024-01-27T19:15:17Z INFO Requested /about endpoint successful
+192.168.1.98 - - [27/Jan/2024 19:15:17] "GET /about HTTP/1.1" 200 -
+192.168.1.98 - - [27/Jan/2024 19:15:17] "GET /static/css/main.css HTTP/1.1" 304 -
+2024-01-27T19:15:21Z INFO Requested /metrics endpoint successful
+192.168.1.98 - - [27/Jan/2024 19:15:21] "GET /create HTTP/1.1" 200 -
+192.168.1.98 - - [27/Jan/2024 19:15:21] "GET /static/css/main.css HTTP/1.1" 304 -
+2024-01-27T19:15:25Z INFO Requested /metrics endpoint successful
+2024-01-27T19:15:25Z INFO News Article: Hello World created successfully
+192.168.1.98 - - [27/Jan/2024 19:15:25] "POST /create HTTP/1.1" 302 -
+192.168.1.98 - - [27/Jan/2024 19:15:25] "GET / HTTP/1.1" 200 -
+192.168.1.98 - - [27/Jan/2024 19:15:25] "GET /static/css/main.css HTTP/1.1" 304 -
