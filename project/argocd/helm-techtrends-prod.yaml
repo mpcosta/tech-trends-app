@@ -12,6 +12,6 @@ spec:
     helm:
       valueFiles:
         - values-prod.yaml
-    path: solutions/helm/nginx-deployment
+    path: project/helm/
     repoURL: https://github.com/mpcosta/tech-trends-app
     targetRevision: HEAD
